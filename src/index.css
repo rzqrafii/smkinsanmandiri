@@ -21,6 +21,11 @@ h1{
 }
 
 /* section navigation bar */
+.navbar-collapse{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .navbar-brand{
   font-weight: 600;
 }
@@ -41,9 +46,36 @@ h1{
   font-weight: 600;
 }
 
-/* footer */
-.footer{
-  bottom: 0;
+.nav-link {
+  font-size: 16px;
+  text-decoration: none;
+  color: #340067;
+  padding: 20px 0px;
+  /* margin: 0px 20px; */
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: #340067;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 100%;
 }
 
 /* section heroes */
@@ -69,6 +101,15 @@ h1{
   color: #039935;
 }
 
+.btn-artikel{
+  text-decoration: none;
+  color: #fff;
+}
+.btn-artikel:hover{
+  text-decoration: none;
+  color: #e5e5e5;
+}
+
 .text-title__motto , .text-title__heading , .text-title__description{
   margin-top: 0.625rem;
 }
@@ -90,6 +131,14 @@ h1{
 .heroes-img{
   width: 90%;
   margin-left: 15%;
+}
+
+.more-artikel{
+  text-align: center;
+}
+
+.more-artikel-text{
+  background-color: #039935;
 }
 
 /* section jurusan */
@@ -141,12 +190,29 @@ h1{
 }
 
 .body-artikel h6{
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 300;
   margin-top: 1.25rem;
   line-height: 1.6875rem;
 }
 
-.body-artikel a{
+.link-selengkapnya{
+  margin-top: 1rem;
+}
+
+.link-selengkapnya a{
+  font-size: 14px;
+  text-decoration: none;
   color: #039935;
 }
 
@@ -169,4 +235,192 @@ h1{
   grid-template-columns: auto auto auto;
   gap: 1.25rem;
   overflow-x:scroll;
+}
+
+@media screen and (max-width:978px){
+  .wrapper-card-artikel{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1.25rem;
+  }
+  .row-heroes{
+    display:block;
+  }
+
+  .heroes-img-wrapper{
+    display: none;
+  }
+  
+  .wrapper-jurusan{
+    display: block;
+    gap: 1rem;
+  }
+  .jurusan-img img{
+    min-width: 200px;
+  }
+}
+
+/* page artikel */
+.wrapper-artikel{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1.25rem;
+}
+
+.row-all-artikel{
+  padding: 40px;
+  margin-right: 0;
+}
+
+.pagination{
+  display:flex;
+  justify-content: center;
+}
+
+.title-all-artikel{
+  text-align: center;
+}
+
+
+/* detail artikel */
+.row{
+  margin-right: 0;
+}
+
+.row-artikel-detail{
+  gap: 2rem;
+}
+
+.img-artikel-detail{
+  max-width: 100%;
+}
+
+.tanggal-artikel-detail{
+  margin-top: 2rem;
+  color: #9E89B2;
+}
+.judul-artikel-detail{
+ margin-top: 2rem;
+}
+
+.deskripsi-artikel-detail{
+ margin-top: 2rem;
+ line-height: 2;
+}
+
+.created-by-artikel-detail{
+ margin-top: 2rem;
+ color: #9E89B2 ;  
+}
+
+.artikel-lainnya{
+  display:flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.link-artikel-lainnya{
+  text-decoration: none;
+}
+
+.judul-artikel-detail-lainnya{
+  color: #9E89B2;
+}
+
+.judul-artikel-detail-lainnya:hover{
+  text-decoration: none;
+  color: #340067;
+}
+
+
+/* footer */
+.section-footer {
+  margin-top: 5rem;
+  padding:40px 0;
+  color:#f0f9ff;
+  background-color:#340067;
+}
+
+.section-footer h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.section-footer ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.section-footer ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+@media (max-width:767px) {
+  .section-footer .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+.section-footer .item.text {
+  margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+  .section-footer .item.text {
+    margin-bottom:0;
+  }
+}
+
+.section-footer .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.section-footer .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .section-footer .item.social {
+    text-align:center;
+    margin-top:20px;
+  }
+}
+
+.section-footer .item.social > a {
+  font-size:20px;
+  width:36px;
+  height:36px;
+  line-height:36px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+  margin:0 8px;
+  color:#fff;
+  opacity:0.75;
+}
+
+.section-footer .item.social > a:hover {
+  opacity:0.9;
+}
+
+.section-footer .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
 }

@@ -5,22 +5,23 @@ import ImageJurusanMM from '../../images/jurusan_1.png'
 import ImageJurusanAP from '../../images/jurusan_3.png'
 import ImageArtikelMOPDB from '../../images/artikel-1.png'
 import ImageArtikelPPDB from '../../images/artikel-2.png'
+import Artikel from '../../pages/artikel'
 
 const Content = () => {
     return (
         <>
             <div class="container container-heroes">
                 <div class="row row-heroes">
-                    <div class="col-6 heroes-copy">
+                    <div class="col heroes-copy">
                         <h6 class="text-title__motto">SMK Insan Mandiri</h6>
                         <h1 class="text-title__heading">Sekolah swasta dengan akreditasi B di Jakarta</h1>
                         <p class="text-title__description">SMK Insan Mandiri Jakarta menyediakan berbagai fasilitas penunjang bagi anak didiknya. Terdapat guru-guru dengan kualitas terbaik yang kompeten di - bidangnya, kegiatan penunjang pembelajaran seperti ekstrakurikuler (eskul), organisasi siswa, komunitas belajar, tim olahraga, dan perpustakaan sehingga siswa dapat belajar secara maksimal.</p>
                         <span class="btn-container">
-                            <button type="button" class="btn btn-primary__jurusan">Lihat Jurusan</button>
-                            <button type="button" class="btn btn-secondary__profil">Lihat Profil</button>
+                            <button type="button" class="btn btn-primary__jurusan"><a class="btn-artikel" href={"Artikel"}>Lihat Artikel</a></button>
+                            {/* <button type="button" class="btn btn-secondary__profil">Lihat Profil</button> */}
                         </span>
                     </div>
-                    <div class="col-6"><img class="heroes-img" src={ImageHeroes} alt="SMK Insan Mandiri"/></div>
+                    <div class="col heroes-img-wrapper"><img class="heroes-img" src={ImageHeroes} alt="SMK Insan Mandiri"/></div>
                 </div>
                 <div class="row row-jurusan">
                     <div class="col-12 col-jurusan-title">
@@ -33,9 +34,6 @@ const Content = () => {
                             </div>
                             <div class="col jurusan-img">
                                 <img src={ImageJurusanTKJ} alt="Teknik Komputer Jaringan"/>
-                            </div>
-                            <div class="col jurusan-img">
-                                <img src={ImageJurusanAP} alt="Otomatisasi Tata Kelola Perkantoran"/>
                             </div>
                         </div>
                     </div>
@@ -92,6 +90,9 @@ const Content = () => {
                                 </div>
                             </div>
                         </div>
+                        <div class="more-artikel">
+                            <a class="more-artikel-text" href={"Artikel"}>Lebih Banyak Artikel</a>
+                        </div>
                     </div>
                 </div>
                 <div class="row row-video">
@@ -100,9 +101,9 @@ const Content = () => {
                     </div>
                     <div class="col-12">
                         <div class="wrapper wrapper-video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lVHUdwBwvuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/i1t-AZpxKkM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/PHvTkPllHsY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/pqZDNQvOc9U" title="SMK Insan Mandiri" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/BpmvpEMidjo" title="SMK Insan Mandiri" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/AQtjA9jQw0A" title="SMK Insan Mandiri" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
