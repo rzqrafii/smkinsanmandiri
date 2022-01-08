@@ -134,16 +134,40 @@ h1{
 }
 
 .more-artikel{
+  margin-top: 5rem;
   text-align: center;
 }
 
 .more-artikel-text{
-  background-color: #039935;
+  color: #340067;
 }
 
+.row-statistik{
+  margin-top: 6.375rem;
+}
+
+.wrapper-statistik{
+  display: flex;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.column-statistik{
+  text-align: center;
+}
+
+.column-statistik h2{
+  font-weight: bold;
+  color: #340067;
+}
+
+.column-statistik h6{
+  color: #9E89B2;
+}
 /* section jurusan */
 .row-jurusan{
-  margin-top: 6.375rem;
+  margin-top: 8.75rem;
 }
 
 .wrapper-jurusan{

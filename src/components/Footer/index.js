@@ -24,6 +24,8 @@ const Footer = () => {
                         <div class="col-md-6 item text">
                             <h3>SMK Insan Mandiri</h3>
                             <p>SMK Insan Mandiri Jakarta menyediakan berbagai fasilitas penunjang bagi anak didiknya. Terdapat guru-guru dengan kualitas terbaik yang kompeten di - bidangnya, kegiatan penunjang pembelajaran seperti ekstrakurikuler (eskul), organisasi siswa, komunitas belajar, tim olahraga, dan perpustakaan sehingga siswa dapat belajar secara maksimal.</p>
+                            <br/>
+                            <p>JL. Moch Kahfi II No.48, Jagakarsa, Kec. Jagakarsa, Kota Jakarta Selatan Prov. D.K.I. Jakarta</p>
                         </div>
                     </div>
                     <p class="copyright">Teknik Informatika - Trilogi © 2021</p>

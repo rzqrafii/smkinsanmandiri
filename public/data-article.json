@@ -1,0 +1,64 @@
+{"data":
+[
+    {
+        "id": 6,
+        "judul": "test123",
+        "deskripsi": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+        "gambar": "http://192.168.1.55:3000/img/test123-1640358687152-1.jpeg",
+        "createdBy": "Administrator",
+        "updatedBy": null,
+        "createdAt": "2021-12-24T15:11:27.000Z",
+        "updatedAt": "2021-12-24T15:11:27.000Z"
+    },
+    {
+        "id": 7,
+        "judul": "ini judul",
+        "deskripsi": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. ",
+        "gambar": "http://192.168.1.55:3000/img/test123-1640358687152-1.jpeg",
+        "createdBy": "Administrator",
+        "updatedBy": null,
+        "createdAt": "2021-12-24T15:11:27.000Z",
+        "updatedAt": "2021-12-24T15:11:27.000Z"
+    },
+    {
+        "id": 8,
+        "judul": "ini judul ke 2",
+        "deskripsi": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.  ",
+        "gambar": "http://192.168.1.55:3000/img/test123-1640358687152-1.jpeg",
+        "createdBy": "Administrator",
+        "updatedBy": null,
+        "createdAt": "2021-12-24T15:11:27.000Z",
+        "updatedAt": "2021-12-24T15:11:27.000Z"
+    },
+    {
+        "id": 9,
+        "judul": "ini id ke 3",
+        "deskripsi": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+        "gambar": "http://192.168.1.55:3000/img/test123-1640358687152-1.jpeg",
+        "createdBy": "Administrator",
+        "updatedBy": null,
+        "createdAt": "2021-12-24T15:11:27.000Z",
+        "updatedAt": "2021-12-24T15:11:27.000Z"
+    },
+    {
+        "id": 10,
+        "judul": "ini id ke 4",
+        "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, ",
+        "gambar": "http://192.168.1.55:3000/img/test123-1640358687152-1.jpeg",
+        "createdBy": "Administrator",
+        "updatedBy": null,
+        "createdAt": "2021-12-24T15:11:27.000Z",
+        "updatedAt": "2021-12-24T15:11:27.000Z"
+    },
+    {
+        "id": 10,
+        "judul": "ini id ke 5",
+        "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, ",
+        "gambar": "http://192.168.1.55:3000/img/test123-1640358687152-1.jpeg",
+        "createdBy": "Administrator",
+        "updatedBy": null,
+        "createdAt": "2021-12-24T15:11:27.000Z",
+        "updatedAt": "2021-12-24T15:11:27.000Z"
+    }
+]
+}

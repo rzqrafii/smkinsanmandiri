@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import ImageHeroes from '../../images/heroes-img-2.png'
 import ImageJurusanTKJ from '../../images/jurusan_2.png'
 import ImageJurusanMM from '../../images/jurusan_1.png'
@@ -6,8 +6,28 @@ import ImageJurusanAP from '../../images/jurusan_3.png'
 import ImageArtikelMOPDB from '../../images/artikel-1.png'
 import ImageArtikelPPDB from '../../images/artikel-2.png'
 import Artikel from '../../pages/artikel'
+import axios from 'axios'
 
 const Content = () => {
+    const [data, setData] = useState([]);
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            setData([])
+            const result = await axios(
+                './data-article.json',
+            );
+            
+            result.data.data.map((item, index)=>
+            {
+                if(index < 3){
+                    setData(val=>[...val,item])
+                }
+            })
+        };
+
+        fetchData();
+    }, []);
     return (
         <>
             <div class="container container-heroes">
@@ -22,6 +42,30 @@ const Content = () => {
                         </span>
                     </div>
                     <div class="col heroes-img-wrapper"><img class="heroes-img" src={ImageHeroes} alt="SMK Insan Mandiri"/></div>
+                </div>
+                <div class="row row-statistik">
+                    <div class="col-12 wrapper-statistik">
+                        <div class="col-3 column-statistik">
+                            <h2>13</h2>
+                            <br/>
+                            <h6>Guru</h6>
+                        </div>
+                        <div class="col-3 column-statistik">
+                            <h2>48</h2>
+                            <br/>
+                            <h6>Siswa</h6>
+                        </div>
+                        <div class="col-3 column-statistik">
+                            <h2>5</h2>
+                            <br/>
+                            <h6>Ruang Kelas</h6>
+                        </div>
+                        <div class="col-3 column-statistik">
+                            <h2>1</h2>
+                            <br/>
+                            <h6>Laboratorium</h6>
+                        </div>
+                    </div>
                 </div>
                 <div class="row row-jurusan">
                     <div class="col-12 col-jurusan-title">
@@ -44,22 +88,24 @@ const Content = () => {
                     </div>
                     <div class="col-12">
                         <div class="wrapper wrapper-card-artikel">
-                            <div class="card-artikel">
-                                <div class="picture-artikel">
-                                    <img class="img-artikel" src={ImageArtikelMOPDB} alt="Persiapan MOPDB Online SMK Insan Mandiri" />
+                            {data.map( val =>(
+                                <div class="card-artikel">
+                                    <div class="picture-artikel">
+                                        <img class="img-artikel" src={ImageArtikelMOPDB} alt="Persiapan MOPDB Online SMK Insan Mandiri" />
+                                    </div>
+                                    <div class="header-artikel">
+                                        <h5>{val.judul}</h5>
+                                    </div>
+                                    <div class="body-artikel">
+                                        <h6>{val.deskripsi} <a href="#"> <br/> Selengkapnya</a> </h6>
+                                    </div>
+                                    <div class="footer-artikel">
+                                        <div class="footer-artikel-tanggal"><h6>{val.createdAt}</h6></div>
+                                        <div class="footer-artikel-postedby"><h6>{val.createdBy}</h6></div>
+                                    </div>
                                 </div>
-                                <div class="header-artikel">
-                                    <h5>Persiapan MOPDB Online</h5>
-                                </div>
-                                <div class="body-artikel">
-                                    <h6>Persiapan Masa Orientasi Peserta Didik Baru, SMK Insan Mandiri akan dilaksanakan pada : Hari Sabtu, 10 Juli 2021. <a href="#">Selengkapnya</a> </h6>
-                                </div>
-                                <div class="footer-artikel">
-                                    <div class="footer-artikel-tanggal"><h6>07/05/2021</h6></div>
-                                    <div class="footer-artikel-postedby"><h6>Administrator</h6></div>
-                                </div>
-                            </div>
-                            <div class="card-artikel">
+                            ) )}
+                            {/* <div class="card-artikel">
                                 <div class="picture-artikel">
                                     <img class="img-artikel" src={ImageArtikelPPDB} alt="Persiapan MOPDB Online SMK Insan Mandiri" />
                                 </div>
@@ -88,7 +134,7 @@ const Content = () => {
                                     <div class="footer-artikel-tanggal"><h6>07/05/2021</h6></div>
                                     <div class="footer-artikel-postedby"><h6>Administrator</h6></div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div class="more-artikel">
                             <a class="more-artikel-text" href={"Artikel"}>Lebih Banyak Artikel</a>
