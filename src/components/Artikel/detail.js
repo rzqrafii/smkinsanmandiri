@@ -1,40 +1,92 @@
-import React from 'react'
-import ImageArtikelMOPDB from '../../images/artikel-1.png'
+import React, { useEffect, useState, useRef } from 'react'
+import axios from 'axios'
+import { useParams, NavLink, useNavigate } from 'react-router-dom'
 
-const detail = () => {
-    return (
-        <section class="detail-artikel">
-            <div class="container">
-                <div class="row row-artikel-detail">
-                    <div class="col-lg-8 col-sm-12">
-                        <div class="wrapper-detail-artikel">
-                            <img class="img-artikel-detail" src={ImageArtikelMOPDB} alt="Persiapan MOPDB Online SMK Insan Mandiri" />
-                            <h6 class="tanggal-artikel-detail">23/10/2021</h6>
-                            <h1 class="judul-artikel-detail">Persiapan MOPDB Online</h1>
-                            <p class="deskripsi-artikel-detail">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham. </p>
-                            <h6 class="created-by-artikel-detail">Dibuat oleh: Administrator</h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-12">
-                        <div class="wrapper-artikel-lainnya">
-                            <h5 class="title-artikel-lainnya">Artikel Lainnya</h5>
-                            <hr/>
-                            <div class="artikel-lainnya">
-                                <a href="#" class="link-artikel-lainnya"><h6 class="judul-artikel-detail-lainnya">Persiapan MOPDB Online</h6></a>
-                                <a href="#" class="link-artikel-lainnya"><h6 class="judul-artikel-detail-lainnya">SELAMAT HARI RAYA IDUL FITRI 1441 H</h6></a>
-                                <a href="#" class="link-artikel-lainnya"><h6 class="judul-artikel-detail-lainnya">Hardiknas 2020</h6></a>
-                                <a href="#" class="link-artikel-lainnya"><h6 class="judul-artikel-detail-lainnya">Home Learning</h6></a>
-                                <a href="#" class="link-artikel-lainnya"><h6 class="judul-artikel-detail-lainnya">JADWAL PTS KELAS X 2020-2021</h6></a>
-                                <a href="#" class="link-artikel-lainnya"><h6 class="judul-artikel-detail-lainnya">JADWAL PTS KELAS XI 2020-2021</h6></a>
-                                <a href="#" class="link-artikel-lainnya"><h6 class="judul-artikel-detail-lainnya">JADWAL PTS KELAS XII 2020/2021</h6></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+const Detail = (props) => {
+  const { id } = useParams()
+  let navigate = useNavigate()
+  let mount = useRef()
+
+  const [detailArtikel, setDetailArtikel] = useState({})
+  const [topArtikel, setTopArtikel] = useState([])
+
+  useEffect(() => {
+    const fetchDet = async () => {
+      var config = {
+        method: 'get',
+        url: `http://localhost:3000/api/v1/artikel/detil/${id}`,
+        headers: {},
+      }
+      const res = await axios(config)
+
+      if (res.status === 200) {
+        setDetailArtikel(res.data.data)
+      }
+    }
+
+    const fetchTop = async () => {
+      var config = {
+        method: 'get',
+        url: `http://localhost:3000/api/v1/artikel/highlight`,
+        headers: {},
+      }
+      const res = await axios(config)
+
+      if (res.status === 201) {
+        setTopArtikel(res.data.data)
+      }
+    }
+
+    fetchDet()
+    fetchTop()
+  }, [id])
+
+  return (
+    <>
+      <section class='detail-artikel'>
+        <div class='container' key={detailArtikel.judul}>
+          <div class='row row-artikel-detail'>
+            <div class='col-lg-8 col-sm-12'>
+              <div class='wrapper-detail-artikel'>
+                <img
+                  class='img-artikel-detail'
+                  src={detailArtikel.gambar}
+                  alt='Persiapan MOPDB Online SMK Insan Mandiri'
+                />
+                <h6 class='tanggal-artikel-detail'>
+                  {detailArtikel.createdAt}
+                </h6>
+                <h1 class='judul-artikel-detail'>{detailArtikel.judul}</h1>
+                <p class='deskripsi-artikel-detail'>
+                  {detailArtikel.deskripsi}
+                </p>
+                <h6 class='created-by-artikel-detail'>
+                  Dibuat oleh: {detailArtikel.createdBy}
+                </h6>
+              </div>
             </div>
-        </section>
-    )
+            <div class='col-lg-3 col-sm-12'>
+              <div class='wrapper-artikel-lainnya'>
+                <h5 class='title-artikel-lainnya'>Artikel Lainnya</h5>
+                <hr />
+                <div class='artikel-lainnya'>
+                  {topArtikel.map((item, index) => (
+                    <div key={index.toString()}>
+                      <NavLink to={`/DetailArtikel/${item.id}`}>
+                        <h6 class='judul-artikel-detail-lainnya'>
+                          {item.judul}
+                        </h6>
+                      </NavLink>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
 }
 
-export default detail
+export default Detail
