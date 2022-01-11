@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 import ReactPaginate from 'react-paginate'
+import Moment from 'react-moment'
+import 'moment/locale/id'
 
 const Artikel = () => {
   const [data, setData] = useState([])
@@ -62,7 +64,7 @@ const Artikel = () => {
               </div>
               <div class='footer-artikel'>
                 <div class='footer-artikel-tanggal'>
-                  <h6>{val.createdAt}</h6>
+                  <h6><Moment locale="de" format="DD/MM/YYYY">{val.createdAt}</Moment></h6>
                 </div>
                 <div class='footer-artikel-postedby'>
                   <h6>{val.createdBy}</h6>
