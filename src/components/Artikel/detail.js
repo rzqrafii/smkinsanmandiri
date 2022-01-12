@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 import { useParams, NavLink, useNavigate } from 'react-router-dom'
+import Moment from 'react-moment'
+import 'moment/locale/id'
 
 const Detail = (props) => {
   const { id } = useParams()
@@ -54,7 +56,7 @@ const Detail = (props) => {
                   alt='Persiapan MOPDB Online SMK Insan Mandiri'
                 />
                 <h6 class='tanggal-artikel-detail'>
-                  {detailArtikel.createdAt}
+                  <Moment locale="de" format="DD/MM/YYYY">{detailArtikel.createdAt}</Moment>
                 </h6>
                 <h1 class='judul-artikel-detail'>{detailArtikel.judul}</h1>
                 <p class='deskripsi-artikel-detail'>
@@ -72,7 +74,7 @@ const Detail = (props) => {
                 <div class='artikel-lainnya'>
                   {topArtikel.map((item, index) => (
                     <div key={index.toString()}>
-                      <NavLink to={`/DetailArtikel/${item.id}`}>
+                      <NavLink to={`/DetailArtikel/${item.id}`} style={{textDecoration:"none"}}>
                         <h6 class='judul-artikel-detail-lainnya'>
                           {item.judul}
                         </h6>

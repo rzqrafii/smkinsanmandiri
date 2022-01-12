@@ -39,7 +39,7 @@ const Artikel = () => {
         <div class='col-12 title-all-artikel'>
           <h1>Pilihan Artikel</h1>
         </div>
-        <div class='wrapper-artikel'>
+        <div class='wrapper-artikel-all'>
           {data.map((val) => (
             <div class='card-artikel'>
               <div class='picture-artikel'>
@@ -77,8 +77,8 @@ const Artikel = () => {
       <div class='row row-pagination'>
         <nav aria-label='Page navigation example'>
           <ReactPaginate
-            previousLabel={'prev'}
-            nextLabel={'next'}
+            previousLabel={'«'}
+            nextLabel={'»'}
             breakLabel={'...'}
             breakClassName={'break-me'}
             pageCount={pageCount}

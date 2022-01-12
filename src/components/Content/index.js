@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import ImageHeroes from '../../images/heroes-img-2.png'
-import ImageJurusanTKJ from '../../images/jurusan_2.png'
-import ImageJurusanMM from '../../images/jurusan_1.png'
-// import ImageJurusanAP from '../../images/jurusan_3.png'
-import ImageArtikelMOPDB from '../../images/artikel-1.png'
-// import ImageArtikelPPDB from '../../images/artikel-2.png'
-// import Artikel from '../../pages/artikel'
+import ImageJurusanTKJ from '../../images/tkj.png'
+import ImageJurusanTeknikMotor from '../../images/teknikmesin.png'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Moment from 'react-moment'
+import 'moment/locale/id'
+import CountUp, { useCountUp } from 'react-countup';
 
 const Content = () => {
   const [data, setData] = useState([])
@@ -61,25 +60,29 @@ const Content = () => {
         <div class='row row-statistik'>
           <div class='col-12 wrapper-statistik'>
             <div class='col-3 column-statistik'>
-              <h2>13</h2>
+              <CountUp end={13} duration={2} class="countup-statistik" style={{fontSize:"2rem", fontWeight:"bold", color:"#340067"}}></CountUp>
               <br />
               <h6>Guru</h6>
             </div>
+            <hr class="border-btm-statistik"/>
             <div class='col-3 column-statistik'>
-              <h2>48</h2>
+              <CountUp end={48} duration={2} class="countup-statistik" style={{fontSize:"2rem", fontWeight:"bold", color:"#340067"}}></CountUp>
               <br />
               <h6>Siswa</h6>
             </div>
+            <hr class="border-btm-statistik"/>
             <div class='col-3 column-statistik'>
-              <h2>5</h2>
+              <CountUp end={5} duration={2} class="countup-statistik" style={{fontSize:"2rem", fontWeight:"bold", color:"#340067"}}></CountUp>
               <br />
               <h6>Ruang Kelas</h6>
             </div>
+            <hr class="border-btm-statistik"/>
             <div class='col-3 column-statistik'>
-              <h2>1</h2>
+              <CountUp end={1} duration={2} class="countup-statistik" style={{fontSize:"2rem", fontWeight:"bold", color:"#340067"}}></CountUp>
               <br />
               <h6>Laboratorium</h6>
             </div>
+            <hr class="border-btm-statistik"/>
           </div>
         </div>
         <div class='row row-jurusan'>
@@ -89,7 +92,7 @@ const Content = () => {
           <div class='col-12 col-jurusan-img'>
             <div class='wrapper wrapper-jurusan'>
               <div class='col jurusan-img'>
-                <img src={ImageJurusanMM} alt='Multimedia' />
+                <img src={ImageJurusanTeknikMotor} alt='Teknik dan Bisnis Sepeda Motor' />
               </div>
               <div class='col jurusan-img'>
                 <img src={ImageJurusanTKJ} alt='Teknik Komputer Jaringan' />
@@ -120,13 +123,12 @@ const Content = () => {
                   </div>
                   <div class='link-selengkapnya'>
                     <h6 key={index.toString()}>
-                      {/* <a href={'DetailArtikel'}>Selengkapnya</a> */}
                       <Link to={`/DetailArtikel/${val.id}`}>Selengkapnya</Link>
                     </h6>
                   </div>
                   <div class='footer-artikel'>
                     <div class='footer-artikel-tanggal'>
-                      <h6>{val.createdAt}</h6>
+                    <h6><Moment locale="de" format="DD/MM/YYYY">{val.createdAt}</Moment></h6>
                     </div>
                     <div class='footer-artikel-postedby'>
                       <h6>{val.createdBy}</h6>

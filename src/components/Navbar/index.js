@@ -8,7 +8,7 @@ const Navbar = () => {
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container container-navbar">
                     <div class="logo-navbar">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="/">
                             <img src={ImageLogo} alt="logo-smkinsan"/>
                         </a>
                     </div>
@@ -20,17 +20,6 @@ const Navbar = () => {
                             <li class="nav-item">
                                 <Link className="nav-link nav-link-ltr" to="/"> Home </Link>
                             </li>
-                            {/* <li class="nav-item">
-                                <Link className="nav-link nav-link-ltr" to="profil">{''} 
-                                Profil{''}
-                                 </Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link className="nav-link nav-link-ltr" to="/jurusan"> Jurusan </Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link className="nav-link nav-link-ltr" to="/galeri"> Galeri </Link>
-                            </li> */}
                             <li class="nav-item">
                             <Link className="nav-link nav-link-ltr" to="artikel">{''} 
                                 Artikel{''}
