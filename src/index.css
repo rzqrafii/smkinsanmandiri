@@ -484,8 +484,18 @@ h1{
     text-decoration: none;
 }
 
-.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
-  background-color: red !important;
-  border-color: red !important;
+.pagination > li > a {
+  border: none !important;
+  padding: 10px 15px !important;
   outline: none;
+  cursor: pointer;
+  color: #212121 !important;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+  background-color: #c4c4c4 !important;
+  border:none !important;
+  outline: none;
+  border-radius: 50%;
+  color: white !important;
 }
